@@ -1,0 +1,76 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1694381392128,
+      "tag": "0000_colorful_marten_broadcloak",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1694468410205,
+      "tag": "0001_flashy_giant_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1694468521957,
+      "tag": "0002_unusual_quicksilver",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1694468553357,
+      "tag": "0003_sleepy_ender_wiggin",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1694469262141,
+      "tag": "0004_pale_iron_fist",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1694479858454,
+      "tag": "0005_faithful_piledriver",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1694525665765,
+      "tag": "0006_greedy_marvel_boy",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1694531364518,
+      "tag": "0007_kind_colleen_wing",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1694531657962,
+      "tag": "0008_conscious_guardsmen",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1694532483182,
+      "tag": "0009_messy_dragon_lord",
+      "breakpoints": true
+    }
+  ]
+}

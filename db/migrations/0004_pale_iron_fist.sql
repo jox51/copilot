@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `fullName` varchar(255);

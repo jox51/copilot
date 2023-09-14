@@ -17,74 +17,82 @@ import { Divider } from "@chakra-ui/react"
 export default function HeroSection() {
   return (
     <>
-      <Container maxW={"3xl"}>
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}
-        >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-            lineHeight={"110%"}
-            id="hero"
-          >
-            Trade Like a <br />
-            <Text as={"span"} color={"green.400"}>
-              Casino
-            </Text>
-          </Heading>
-          <Text color={"gray.500"}>
-            Leverage the power of data science and machine learning to get
-            weekly or monthly options picks. Shift the odds in your favor and
-            make informed decisions.
-          </Text>
+      <Box
+        bgGradient="linear(to-t, rgba(60, 179, 113, 0.2), rgba(112, 128, 144, 0.7))"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        bgSize="cover"
+        bgBlendMode="overlay"
+      >
+        <Container maxW={"3xl"}>
           <Stack
-            direction={"column"}
-            spacing={3}
-            align={"center"}
-            alignSelf={"center"}
-            position={"relative"}
+            as={Box}
+            textAlign={"center"}
+            spacing={{ base: 8, md: 14 }}
+            py={{ base: 20, md: 36 }}
           >
-            <Button
-              colorScheme={"green"}
-              bg={"green.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "green.500"
-              }}
+            <Heading
+              fontWeight={600}
+              fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+              lineHeight={"110%"}
+              id="hero"
             >
-              Get Started
-            </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              Learn more
-            </Button>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue("gray.800", "gray.300")}
-                w={71}
-                position={"absolute"}
-                right={-71}
-                top={"10px"}
-              />
-              <Text
-                fontSize={"lg"}
-                fontFamily={"Caveat"}
-                position={"absolute"}
-                right={"-125px"}
-                top={"-15px"}
-                transform={"rotate(10deg)"}
-              >
-                Starting at $59/mo
+              Trade Like a <br />
+              <Text as={"span"} color={"green.400"}>
+                Casino
               </Text>
-            </Box>
+            </Heading>
+            <Text color={"gray.500"}>
+              Leverage the power of data science and machine learning to get
+              weekly or monthly options picks. Shift the odds in your favor and
+              make informed decisions.
+            </Text>
+            <Stack
+              direction={"column"}
+              spacing={3}
+              align={"center"}
+              alignSelf={"center"}
+              position={"relative"}
+            >
+              <Button
+                colorScheme={"green"}
+                bg={"green.400"}
+                rounded={"full"}
+                px={6}
+                _hover={{
+                  bg: "green.500"
+                }}
+              >
+                Get Started
+              </Button>
+              <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+                Learn more
+              </Button>
+              <Box>
+                <Icon
+                  as={Arrow}
+                  color={useColorModeValue("gray.800", "gray.300")}
+                  w={71}
+                  position={"absolute"}
+                  right={-71}
+                  top={"10px"}
+                />
+                <Text
+                  fontSize={"lg"}
+                  fontFamily={"Caveat"}
+                  position={"absolute"}
+                  right={"-125px"}
+                  top={"-15px"}
+                  transform={"rotate(10deg)"}
+                >
+                  Starting at $59/mo
+                </Text>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
-      <Divider />
+        </Container>
+        <Divider />
+      </Box>
     </>
   )
 }

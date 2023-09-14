@@ -13,7 +13,7 @@ import {
   Box,
   Flex,
   Heading,
-  Progress
+  useToast
 } from "@chakra-ui/react"
 import OptionInputFields from "./OptionInputFields"
 import useOptionsStore from "../store/optionsStore"
@@ -27,6 +27,7 @@ function DrawerExample() {
     {}
   )
   const [completionPercentage, setCompletionPercentage] = useState<number>(0)
+  const toast = useToast()
 
   const validateFields = () => {
     let errors: Record<string, boolean> = {}
@@ -110,6 +111,14 @@ function DrawerExample() {
       })
       onClose()
     }
+    toast({
+      position: "top-right",
+      title: "Parameters Submitted",
+      description: `Your parameters have been submitted. Will contact you when the portfolio is ready.`,
+      status: "success",
+      duration: 9000,
+      isClosable: true
+    })
   }
 
   return (

@@ -17,6 +17,9 @@ const EditableCell = ({
     setIsEditing(false)
     onChange(inputValue)
   }
+  const displayValue = inputValue || "Click to Edit " // Use a placeholder if value is empty
+
+  console.log({ value })
 
   if (cell === "tickersCalls" || cell === "tickersPuts") {
     return isEditing ? (
@@ -32,14 +35,14 @@ const EditableCell = ({
         </Button>
       </Box>
     ) : (
-      <span onClick={() => setIsEditing(true)}>{value}</span>
+      <span onClick={() => setIsEditing(true)}>{displayValue}</span>
     )
   }
 
   return isEditing ? (
     <Box>
       <Input
-        value={inputValue}
+        value={value}
         onChange={(e) => setInputValue(e.target.value)}
         size="sm"
       />
@@ -48,7 +51,7 @@ const EditableCell = ({
       </Button>
     </Box>
   ) : (
-    <span onClick={() => setIsEditing(true)}>{value}</span>
+    <span onClick={() => setIsEditing(true)}>{displayValue}</span>
   )
 }
 

@@ -14,7 +14,7 @@ import {
   Text,
   TableContainer,
   Flex,
-  Input,
+  useToast,
   Button
 } from "@chakra-ui/react"
 import EditableCell from "./EditableCell"
@@ -61,6 +61,9 @@ const DashboardLatestUsersParams = () => {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [loading, setLoading] = useState(true)
   const { editFields, setEditFields } = useEditParamsFields()
+  // State to keep track of edited rows
+  const [editedRows, setEditedRows] = useState(new Set())
+  const toast = useToast()
 
   function parseTickers(tickers: string): string[] {
     try {
@@ -82,7 +85,13 @@ const DashboardLatestUsersParams = () => {
       updatedData[index][key] = value
     }
     setData({ body: { latestUniqueFormParams: updatedData } })
-    console.log({ data })
+
+    // Update the editedRows state
+    setEditedRows((prevRows) => {
+      const newRows = new Set(prevRows)
+      newRows.add(index)
+      return newRows
+    })
   }
 
   useEffect(() => {
@@ -134,6 +143,14 @@ const DashboardLatestUsersParams = () => {
       .catch((error) => {
         console.error("Error fetching data:", error)
       })
+    toast({
+      position: "top-right",
+      title: "Data Received",
+      description: `Fetched ${data?.body.latestUniqueFormParams.length} items.`,
+      status: "success",
+      duration: 9000,
+      isClosable: true
+    })
   }
 
   const submitEditedData = () => {
@@ -152,6 +169,18 @@ const DashboardLatestUsersParams = () => {
       .catch((error) => {
         console.error("Error updating data:", error)
       })
+
+    // Show toast
+    const editedRowCount = editedRows.size
+    const totalItemCount = data?.body.latestUniqueFormParams.length || 0
+    toast({
+      position: "top-right",
+      title: "Data Updated",
+      description: `Edited ${editedRowCount} rows out of ${totalItemCount} items.`,
+      status: "success",
+      duration: 9000,
+      isClosable: true
+    })
   }
 
   return (
@@ -236,7 +265,7 @@ const DashboardLatestUsersParams = () => {
                           }
                         />
                       </Td>
-                      <Td>
+                      <Td minWidth={"2px"}>
                         <EditableCell
                           value={user.maxProfitPercentage}
                           onChange={(value) =>

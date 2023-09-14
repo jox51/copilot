@@ -73,7 +73,7 @@ export default function CustomerPage() {
 
   useEffect(() => {
     if (session) {
-      fetch("http://localhost:3000/api/getLatestFormParameters", {
+      fetch("/api/getLatestFormParameters", {
         method: "GET",
         headers: {
           "Content-Type": "application/json"

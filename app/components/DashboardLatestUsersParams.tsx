@@ -86,7 +86,7 @@ const DashboardLatestUsersParams = () => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/allUserParams")
+    fetch("/api/allUserParams")
       .then((response) => response.json())
       .then((data: FetchApiResponse) => {
         const parsedData = {
@@ -113,7 +113,7 @@ const DashboardLatestUsersParams = () => {
 
   const fetchLatestData = () => {
     // You can reuse the fetch logic from your useEffect
-    fetch("http://localhost:3000/api/allUserParams")
+    fetch("/api/allUserParams")
       .then((response) => response.json())
       .then((data: FetchApiResponse) => {
         const parsedData = {
@@ -138,7 +138,7 @@ const DashboardLatestUsersParams = () => {
 
   const submitEditedData = () => {
     // Assuming you have an API endpoint to handle the update
-    fetch("http://localhost:3000/api/updateUserParams", {
+    fetch("/api/updateUserParams", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

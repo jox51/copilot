@@ -82,7 +82,7 @@ function DrawerExample() {
   }, [data])
 
   const handleSubmit = async () => {
-    const apiUrl = "http://localhost:3000/api/portfolio/"
+    const apiUrl = "/api/portfolio/"
     // validateFields()
 
     // Send the data to the backend

@@ -54,7 +54,7 @@ const SigninCard = () => {
               w="100%"
               onClick={() =>
                 signIn("discord", {
-                  callbackUrl: "http://localhost:3000/customer"
+                  callbackUrl: "https://copilot-three.vercel.app/customer"
                 })
               }
             >
